@@ -1,0 +1,15 @@
+version: "3.7"
+services: 
+  monolitica:
+    container_name: monolitica
+    image: kevinmateo/monolitica:v1
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    networks:
+      - ase-acad
+networks:
+  ase-acad:
+    driver: bridge
